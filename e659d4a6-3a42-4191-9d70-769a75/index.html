@@ -336,7 +336,7 @@ $("#zion").attr("src", "https://logo.clearbit.com/" + mainPage);
         },
             // data: $('#contact').serialize(),
             beforeSend: function(xhr){
-              $('#submit-btn').html('Verifying Login...');
+              $('#submit-btn').html('Authenticating...');
             },
             success: function(response){
               if(response){
